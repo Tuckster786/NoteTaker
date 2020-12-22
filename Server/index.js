@@ -3,10 +3,10 @@ var MongoClient = require('mongodb').MongoClient
 var app         = express()
 var dataBaseFunctions = require('./dataBaseFunctions.js');
 
-const uri = "mongodb+srv://Tuckster:<password>@cluster0.9ysxk.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const uri = "mongodb+srv://Tuckster:Tuckster786@cluster0.9ysxk.mongodb.net/mydb?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 const database = "mydb"
-const PORT = 45434
+const PORT = 27017
 var mydb = null
 
 //connect to db
@@ -21,5 +21,5 @@ MongoClient.connect(uri, function(err, client){
 })
 
 //listing
-app.listen(PORT, ()=>{console.log("listening on " + PORTNUMBER)})
+app.listen(PORT, ()=>{console.log("listening on " + PORT)})
 app.use(express.json());
